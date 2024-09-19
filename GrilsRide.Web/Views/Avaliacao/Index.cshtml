@@ -1,0 +1,31 @@
+﻿@model List<Avaliacao>
+@{
+    ViewData["Title"] = "Avaliacao";
+}
+
+@if (TempData["msgar"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgar"]
+    </div>
+}
+
+<h1>Lista de Avaliações!</h1>
+
+<table class="table table-hover">
+    <tr>
+        <th>Comentario</th>
+        <th>Nota</th>  
+    </tr>
+
+    @foreach (var v in Model)
+    {
+    <tr>
+        <td>@v.comentario</td>
+        <td>@v.Nota</td>
+    </tr>
+    }
+  <a asp-action="Cadastrar"  class="btn btn-outline-dark btn-outline-primary">Avaliar</a>
+
+</table>
+

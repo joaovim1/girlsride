@@ -1,0 +1,90 @@
+﻿@model List<Cliente>
+@{
+    ViewData["Title"] = "Rides";
+}
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msg"]
+    </div>
+}
+
+<h1>Rides Cadastradas</h1>
+
+<table class="table table-hover">
+    <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>Partida</th>
+        <th>Chegada</th>
+        <th>Modelo do carro</th>
+        <th>Placa</th>
+        <th>Senha da porta</th>
+        <th>Valor total</th>
+        <th>
+            <form class="row row-cols-lg-auto g-3 mb-3 align-items-center">
+                <div>
+                    <input type="text" name="nome" placeholder="Digite o nome" class="form-control"/>
+                </div>
+                <div>
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </div>
+            </form>
+
+        </th>
+
+    </tr>
+
+    @foreach (var v in Model)
+    {
+    <tr>
+        <td>@v.Name</td>
+        <td>@v.cpf</td>
+        <td>@v.Telefone</td>
+        <td>@v.partida</td>
+        <td>@v.chegada</td>
+        <td>@v.Carros?.ModeloCarro</td>
+        <td>@v.Carros?.Placa</td>
+        <td>@v.Carros?.SenhaPorta</td>
+        <td>@v.Pagamentos.Total</td>
+        
+        
+        <td> <a asp-action="Editar"  class="btn btn-outline-dark btn-sm" asp-route-id="@v.Id">Editar</a>
+            
+
+            <button onclick="IdCliente.value = @v.Id" type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                 Cancelar
+             </button>
+             
+        </td>
+    </tr>
+    }
+
+
+</table>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cancelamento de Ride</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja Realmente cancelar a corrida?
+      </div>
+      <div class="modal-footer">
+        <form asp-action="remover">
+            <input type="hidden" name="id" id="IdCliente"/>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+            <button type="submit" class="btn btn-danger">Sim</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

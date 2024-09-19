@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h3>GIRLS RIDE</h3> 
+            <p>
+                De acordo com o G1 de 2019, 97% das mulheres no Brasil já sofreram assédio dentro dos transportes públicos, carro de aplicativo e táxis. 
+            Uber reporta mais de 3 mil casos de assédio dentro do App 
+            E somos um dos países que mais mata pessoas trans. 
+            Com esses dados e pessoas próximas com seus relatos sobre o quão desconfortável e perigoso se tornou uma mulher se locomover 
+            Pensando nisso, criamos o GirlsRide um aplicativo com um carro autônomo de alta tecnologia que não precisa de motorista e com uma segurança desde o cadastro ate dentro no veículo tanto fora quanto dentro 
+            Dentro do app vai ter um cadastro fácil mas rigoroso com identificação de câmera para termos certeza que é uma mulher. 
+            Dentro do veículo autônomo e blindado vamos ter câmeras do lado de fora detectando se há algum perigo no embarque e desembarque da passageira e um botão de segurança dentro do carro que avisamos dentro do app assim que confirmar sua corrida, caso há alguma emergência e assim que acionado a polícia é acionada. 
+            </p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                      <img src="~/CarroGirls.png" class="card-img-top" alt="Autonomo">
+                      <div class="card-body">
+                        <p class="card-text">Nossos carros são de alta tecnologia e não precisa de motorista  com uma segurança desde o cadastro ate o seu destino.</p>
+                         <a class="btn btn-outline-info" asp-area="" asp-controller="Carro" asp-action="Index2">Listar</a>
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                      <img src="~/Rideimg.png" class="card-img-top" alt="Autonomo">
+                      <div class="card-body">
+                        <p class="card-text">Historico de corridas finalizadas , onde é possivel ver desde a primeira corrida feita, valor que foi pago e o modelo do carro.</p>
+                         <a class="btn btn-outline-info" asp-area="" asp-controller="Cliente" asp-action="Index2">Rides</a>
+                      </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card" style="width: 18rem;">
+                      <img src="~/Avalicao.jpg" class="card-img-top" alt="Avaliacao">
+                      <div class="card-body">
+                        <p class="card-text">Avalie nosso App com uma critica construtiva, como podemos melhoar ou um elogio :).</p>
+                         <a class="btn btn-outline-info" asp-area="" asp-controller="Avaliacao" asp-action="Index">Avaliações</a>
+                      </div>
+                    </div>
+                </div>
+                
+           
+               
+        
+            </div>
+            <h2 class="mb-5 mt-5"> Funcionalidades</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Home Page</h4>
+                      <div class="card-body">
+                        <p class="card-text">Ela ajuda aos usuarios a visualizar todas as funcionalidades do App.</p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Novo Carro</h4>
+                      <div class="card-body">
+                        <p class="card-text">Função para Administradores, essa funcionalide é para cadastrar  cadastrar/Editar/Remover Carros em nossa Frota.<br/> </p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Novo Ride</h4>
+                      <div class="card-body">
+                        <p class="card-text">Função para clientes do Girls Ride, para fazer novas rides ou cancelar.<br/> </p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Meus Cartões</h4>
+                      <div class="card-body">
+                        <p class="card-text">Nesta funcionalidade o cliente pode cadastrar ou remover um cartão de credito para pagar suas rides.
+                            <br/>Tanto para uma unica ride quanto para rides Agendadas! </p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Agenda</h4>
+                      <div class="card-body">
+                        <p class="card-text">Funcionalidade para Administradores, dentro dela ele organiza os horaris e dias disponives para agendamento de corrida. </p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Listagem De carros Na home</h4>
+                      <div class="card-body">
+                        <p class="card-text"> Esta funcionalide serve para o usuario ver os modelos de carros que temos em nossa frota. </p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Ride Na home</h4>
+                      <div class="card-body">
+                        <p class="card-text"> Esta funcionalide serve para o usuario ver corridas realizadas e realizar um agendamento com os mesmos dados de uma corrida passada. </p>           
+                      </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <h4>Avaliações</h4>
+                      <div class="card-body">
+                        <p class="card-text"> Esta funcionalidade serve para o usuario realizar uma critica construtiva, como podemos melhoar ou um elogio. </p>           
+                      </div>
+                    </div>
+                </div>
+            </div> 
+</div>
+

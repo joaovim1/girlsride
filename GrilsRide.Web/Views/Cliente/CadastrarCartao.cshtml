@@ -1,0 +1,45 @@
+﻿@model Cartao
+@{
+    ViewData["Title"] = "CadastrarCartao";
+}
+
+<h1>Cadastro de Cartão</h1>
+
+
+
+@if (TempData["msge"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["msge"]
+    </div>
+}
+@if (TempData["msgCartao"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgCartao"]
+    </div>
+}
+<form asp-action="CadastrarCartao">
+
+    <div class="mb-3">
+        <label asp-for="nrCartao"></label>
+        <input asp-for="nrCartao" class="form-control" placeholder="Numero do Cartão"/>
+    </div>  
+    <div class="mb-3">
+        <label asp-for="nomeImpresso"></label>
+        <input asp-for="nomeImpresso" class="form-control" placeholder="Numero do Cartão"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="validade"></label>
+        <input asp-for="validade" class="form-control" placeholder="Numero do Cartão"/>
+    </div>
+    <div class="mb-3">
+        <label asp-for="cvv"></label>
+        <input asp-for="cvv" class="form-control" placeholder="Numero do Cartão"/>
+    </div>
+
+    
+
+     <input type="submit" value="Cadastrar Cartão" class="btn btn-primary"/>
+
+</form>

@@ -1,0 +1,43 @@
+﻿@model Agendamento
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (TempData["msgag"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgag"]
+    </div>
+}
+<h1>Index</h1>
+
+<div class="row">
+    <div class="col-6">
+        <h1>Cadastro de agenda disponiveis</h1>
+           <form asp-action="cadastrar">
+               <div class="mb-3">
+                   <label asp-for="AgendamentoNo"></label>
+                   <input asp-for="AgendamentoNo" class="form-control" />
+               </div>
+               <button class="btn btn-primary">Cadastrar Agenda</button>
+           </form>
+    </div>
+
+    <div class="col-6">
+        <h1>Agendamentos Cadastrados</h1>
+        <table class="table">
+            <tr>
+                <th>
+                    Data e Hora do agendamento
+                </th>
+            </tr>
+
+            @foreach(var item in ViewBag.lista)
+            {
+                <tr>
+                    <td>@item.AgendamentoNo</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

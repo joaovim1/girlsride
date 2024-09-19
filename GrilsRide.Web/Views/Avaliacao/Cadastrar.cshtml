@@ -1,0 +1,35 @@
+﻿@model Avaliacao
+@{
+    ViewData["Title"] = "Cadastrar novo Carro";
+}
+
+<h1>Novo Carro! </h1>
+
+@if (TempData["msga"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msga"]
+    </div>
+}
+<form asp-action="cadastrar">
+
+   <div class="mb-3">
+     <label asp-for="comentario"></label>
+     <input asp-for="comentario" class="form-control" placeholder="Informe oque podemos melhorar ou um elogio"/>
+    </div>
+    <div>
+         <label asp-for="Nota"></label>
+        <select class="form-select" asp-for="Nota">
+            <option>5</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>         
+        </select>
+    </div>
+  
+
+     <input type="submit" value="Cadastrar" class="btn btn-primary"/>
+    
+</form>
+

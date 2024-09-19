@@ -1,0 +1,45 @@
+﻿@model List<Carro>
+@{
+    ViewData["Title"] = "Rides";
+}
+
+@if (TempData["msgc"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgc"]
+    </div>
+}
+
+<h1>Lista de Carros!</h1>
+
+<table class="table table-hover">
+    <tr>
+        <th>Modelo do carro</th>
+        <th>Placa</th>
+        <th>Senha da Porta</th>
+        <th>
+            <form class="row row-cols-lg-auto g-3 mb-3 align-items-center">
+                <div>
+                    <input type="text" name="placa" placeholder="Digite a placa" class="form-control"/>
+                </div>
+                <div>
+                    <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </div>
+            </form>
+
+        </th>
+        
+    </tr>
+
+    @foreach (var v in Model)
+    {
+        <tr>
+            <td>@v.ModeloCarro</td>
+            <td>@v.Placa</td>
+            <td>@v.SenhaPorta</td>
+         </tr>
+    }
+
+
+</table>
+

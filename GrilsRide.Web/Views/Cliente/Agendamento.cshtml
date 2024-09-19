@@ -1,0 +1,45 @@
+﻿@model Cliente
+@{
+    ViewData["Title"] = "Agendamento";
+}
+
+<h1>Agendamento</h1>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+       
+    </tr>
+    <tr>
+        <td>@Model.Name</td>
+        <td>@Model.Telefone</td>
+        
+        
+    </tr>
+</table>
+
+ <h2>Escolha a data do agendamento</h2>
+ @if (TempData["msgagf"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgagf"]
+    </div>
+}
+<form class="row row-cols-lg-auto g-3 mb-3 align-items-center" asp-action="adicionar">
+        <input type="hidden" name="ClienteId" value="@Model.Id"/>
+      <div class="mb-3">
+         <select class="form-select"  name="AgendamentoId" asp-items="@ViewBag.agendamento">
+             <option>Selecione</option>
+         </select>
+      </div>
+     <button class="btn btn-primary">Agendar</button>
+</form>
+
+<ul class="list-group">
+    @foreach (var item in ViewBag.clienteAgendamento)
+    {
+       
+        <li class="list-group-item">@item.AgendamentoNo</li>
+    }    
+</ul>
